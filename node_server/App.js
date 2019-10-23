@@ -27,7 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.json());
 
-app.use([userRouter, bookRouter]);
+// app.use([userRouter, bookRouter]);
+app.use(userRouter);
 
 app.listen(port, () => {
     console.log('Listening to port ' + port)
