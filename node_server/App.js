@@ -4,13 +4,11 @@ const mongoose = require('mongoose');
 const userRouter = require('./routes/user');
 const cors = require('cors');
 const config = require('./database.js');
-const fs = require('fs')
+const fs = require('fs');
 const app = express();
-
 
 process.env.privateKEY  = fs.readFileSync('./private.key', 'utf8');
 process.env.publicKEY  = fs.readFileSync('./public.key', 'utf8');
-
 
 mongoose.connect(config.DB, {
     useNewUrlParser: true,

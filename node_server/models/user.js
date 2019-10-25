@@ -78,5 +78,4 @@ userSchema.pre('save', async function (next) {
 
 
 const User = mongoose.model('User', userSchema);
-// noinspection JSUndefinedPropertyAssignment
 module.exports = User;

@@ -1,14 +1,5 @@
 const jwt = require('jsonwebtoken');
 const User = require('./models/user');
-// const fs = require('fs')
-
-// const privateKEY  = fs.readFileSync('./private.key', 'utf8');
-// const publicKEY  = fs.readFileSync('./public.key', 'utf8');
-
-// const signOptions = {
-//     expiresIn:  "12h",
-//     algorithm:  "RS256"
-// };
 
 const auth = async (req, res, next) => {
     try {
