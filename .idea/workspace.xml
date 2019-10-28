@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b76222d8-4ca3-47db-be5a-aca78193f5ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/node_server/models/todo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/formHook.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_server/routes/todo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_server/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_server/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_server/models/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/models/todo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/routes/user.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +90,8 @@
       <workItem from="1571814488041" duration="3388000" />
       <workItem from="1571938690875" duration="1758000" />
       <workItem from="1571979099459" duration="1424000" />
-      <workItem from="1571983278993" duration="15669000" />
+      <workItem from="1571983278993" duration="16318000" />
+      <workItem from="1572250237893" duration="1298000" />
     </task>
     <task id="LOCAL−00001" summary="setting up">
       <created>1571816943597</created>
@@ -114,7 +99,14 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1571816943597</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="basic home, login and register working with hooks">
+      <created>1571999052125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571999052125</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="setting up" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up" />
+    <MESSAGE value="basic home, login and register working with hooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic home, login and register working with hooks" />
   </component>
 </project>

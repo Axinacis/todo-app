@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require('./routes/user');
+const todoRouter = require('./routes/todo');
 const cors = require('cors');
 const config = require('./database.js');
 const fs = require('fs');
@@ -25,8 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.json());
 
-// app.use([userRouter, bookRouter]);
-app.use(userRouter);
+app.use([userRouter, todoRouter]);
 
 app.listen(port, () => {
     console.log('Listening to port ' + port)
