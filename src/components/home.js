@@ -18,19 +18,12 @@ function Home() {
             });
     });
 
-    const logout = () => {
-        localStorage.removeItem('jwtToken');
-        window.location.reload();
-    };
-
     return (
         <div class="container">
             <div class="panel panel-default">
                 <h1>HOME</h1>
                 <div className="panel-body">
-                    {localStorage.getItem('jwtToken') &&
-                    <button className="btn btn-primary" onClick={logout}>Logout</button>
-                    }
+
 
                     <div>
                         <p>Content here.</p>

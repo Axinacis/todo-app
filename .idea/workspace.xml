@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b76222d8-4ca3-47db-be5a-aca78193f5ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/node_server/routes/todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/show.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/todolist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_server/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_server/models/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/models/todo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_server/routes/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/routes/todo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_server/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -35,6 +48,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,6 +60,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\paavo\IdeaProjects\todo-app\src\components\modal" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\paavo\IdeaProjects\todo-app\src\components" />
     </key>
@@ -91,7 +108,7 @@
       <workItem from="1571938690875" duration="1758000" />
       <workItem from="1571979099459" duration="1424000" />
       <workItem from="1571983278993" duration="16318000" />
-      <workItem from="1572250237893" duration="1298000" />
+      <workItem from="1572250237893" duration="18761000" />
     </task>
     <task id="LOCAL−00001" summary="setting up">
       <created>1571816943597</created>
@@ -106,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571999052125</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="todo db handling building">
+      <created>1572251565341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572251565341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +153,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="setting up" />
     <MESSAGE value="basic home, login and register working with hooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic home, login and register working with hooks" />
+    <MESSAGE value="todo db handling building" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo db handling building" />
   </component>
 </project>

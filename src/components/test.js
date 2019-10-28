@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 // import useForm from "../formHook";
 
 const Test = function () {
@@ -6,21 +7,34 @@ const Test = function () {
 
     return (
         <div class="container">
-            <form class="form-signin">
-                <h2 class="form-signin-heading">Register</h2>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 className="panel-title">
+                        List of to-do items &nbsp;
+                        <button className="btn btn-primary" >Logout</button>
+                        }
+                    </h3>
+                </div>
+                <div class="panel-body">
 
-                <label htmlFor="inputName" className="sr-only">Name</label>
-                <input type="text" className="form-control" placeholder="Name" name="name" required/>
-
-                <label htmlFor="inputEmail" className="sr-only">Email address</label>
-                <input type="email" className="form-control" placeholder="Email address" name="email" required/>
-
-                <label htmlFor="inputPassword" className="sr-only">Password</label>
-                <input type="password" className="form-control" placeholder="Password" name="password"
-                       required/>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-            </form>
+                    <table class="table table-stripe">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Start time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><Link to={`/show/`}></Link></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };

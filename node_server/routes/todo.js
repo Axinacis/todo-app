@@ -5,7 +5,11 @@ const todoRouter = new express.Router();
 
 todoRouter.post('/todo/', auth, async (req, res) => {
     try {
-        const todo = new Todo(req.body);
+        const todo = new Todo({
+            name: req.body.name,
+            description: req.body.description,
+            created_by: req.user.name
+        });
         await todo.save();
         res.status(201).send({todo})
     } catch (e) {
@@ -14,7 +18,7 @@ todoRouter.post('/todo/', auth, async (req, res) => {
 });
 
 
-todoRouter.get('/todo/', async (req, res) => {
+todoRouter.get('/todo/', auth, async (req, res) => {
     try {
         const todo = await Todo.find({});
         res.send(todo)
@@ -57,7 +61,20 @@ todoRouter.patch('/todo/:id', auth, async (req, res) => {
     }
 });
 
+todoRouter.delete('/todo/:id', auth, async (req, res) => {
+    try {
+        const todo = await Todo.findOneAndDelete({_id: req.params.id});
+        if (!todo) {
+            return res.status(404).send()
+        }
+        res.send(todo)
+    } catch (e) {
+        res.status(500).send(e)
+    }
+});
 
+
+/*
 todoRouter.get('/todo/', auth, async (req, res) => {
     const match = {};
     const mySort = {};
@@ -90,21 +107,6 @@ todoRouter.get('/todo/', auth, async (req, res) => {
         res.status(500).send(e)
     }
 });
-
-
-
-
-todoRouter.delete('/todo/:id', auth, async (req, res) => {
-    try {
-        const book = await Todo.findOneAndDelete({_id: req.params.id});
-        if (!book) {
-            return res.status(404).send()
-        }
-        res.send(book)
-    } catch (e) {
-        res.status(500).send(e)
-    }
-});
-
+*/
 
 module.exports = todoRouter;

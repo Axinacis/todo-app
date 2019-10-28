@@ -13,7 +13,11 @@ function Login() {
             .then((result) => {
                 localStorage.setItem('jwtToken', ('Bearer ' + result.data.token));
                 setMessage('Logged in');
-                navigate('/')
+                console.log('Logged in')
+                setTimeout(()=>{
+                    navigate('/')
+                }, 1500)
+
             })
             .catch((error) => {
                 if (error.response.status === 401) {
@@ -52,8 +56,6 @@ function Login() {
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
-                {/*<p>Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign"
-                                                            aria-hidden="true"/> Register here</Link></p>*/}
             </form>
         </div>
     );

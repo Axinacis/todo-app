@@ -5,7 +5,7 @@ const TodoSchema = new mongoose.Schema({
     description: String,
     created_by: String,
     start_time: {type: Date, default: Date.now},
-    end_time: {type: Date}
+    end_time: {type: Date, default: '0'}
 });
 
 module.exports = mongoose.model('Todo', TodoSchema);

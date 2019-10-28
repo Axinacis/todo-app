@@ -30,15 +30,9 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-
-const signOptions = {
-    expiresIn:  "12h",
-    algorithm:  "RS256"
-};
-
 userSchema.methods.generateToken = async function () {
     const user = this;
-    const token = jwt.sign({_id: user._id.toString()}, process.env.privateKEY, signOptions);
+    const token = jwt.sign({_id: user._id.toString()}, process.env.privateKEY);
     user.tokens = user.tokens.concat({token});
     await user.save();
     return token

@@ -60,7 +60,7 @@ userRouter.post('/users/login', async (req, res) => {
         const token = await user.generateToken();
         res.send({user, token})
     } catch (e) {
-        res.status(400).send()
+        res.status(401).send()
     }
 });
 
