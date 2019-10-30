@@ -9,8 +9,8 @@ function List() {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-
-    });
+        refreshTodos()
+    },[todos]);
 
     const refreshTodos = () => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
@@ -35,6 +35,7 @@ function List() {
                     <h3 className="panel-title">
                         List of to-do items &nbsp; <br/>
                         <button className="btn btn-primary" onClick={refreshTodos}>Refresh todos</button>
+                        <FormDialog buttonText='Add new todo'/>
                     </h3>
                 </div>
                 <div class="panel-body">

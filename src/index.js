@@ -17,13 +17,16 @@ function App() {
         <div className='App'>
             <div className='sidenav'>
                 <A href='/'> Home </A><br/>
-                <A href='/login'> Login </A><br/>
+                {/*<A href='/login'> Login </A><br/>*/}
                 <A href='/register'> Register </A><br/>
                 <A href='/list'> List of todos </A><br/>
 
+                {localStorage.getItem('jwtToken') ?
+                    <button className="btn btn-danger" onClick={logout}>Logout</button> :
+                    <button className="btn btn-primary" onClick={logout}>Login</button>}
 
-                {localStorage.getItem('jwtToken') &&
-                <button className="btn btn-primary" onClick={logout}>Logout</button>}
+                {/*{localStorage.getItem('jwtToken') &&
+                <button className="btn btn-primary" onClick={logout}>Logout</button>}*/}
             </div>
 
             <div className='main'>

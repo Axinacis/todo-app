@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const useForm =  (initialValues) => {
+const useForm = (initialValues) => {
     const [inputs, setInputs] = useState(initialValues);
 
     /*const handleSubmit = (event) => {
@@ -13,19 +13,24 @@ const useForm =  (initialValues) => {
     const handleInputChange = (event) => {
         // event.persist();
         // setInputs(inputs => ({...inputs, [event.target.name]:event.target.value}))
-        const {name,value} = event.target;
-        setInputs(inputs => ({...inputs, [name]:value}))
+        const {name, value} = event.target;
+        setInputs(inputs => ({...inputs, [name]: value}))
     };
 
     const updateInputs = (values) => {
         setInputs({...values})
     };
 
+    const resetInputs = () => {
+        setInputs({...initialValues})
+    };
+
     return {
         inputs,
         // handleSubmit,
         handleInputChange,
-        updateInputs
+        updateInputs,
+        resetInputs
     }
 };
 

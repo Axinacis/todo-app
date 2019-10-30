@@ -28,39 +28,40 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function FormDialog(id) {
+export default function FormDialog(newTodo = false, id) {
     const [open, setOpen] = React.useState(false);
     let values = {};
     const todoID = id.id;
     const classes = useStyles();
 
-/*
-    useEffect(() => {
+    /*
+        useEffect(() => {
 
-    },[values]);
-*/
+        },[values]);
+    */
 
-    const {inputs, handleInputChange, updateInputs} = useForm({
+    let {inputs, handleInputChange, updateInputs, resetInputs} = useForm({
         name: '',
         description: '',
-        end_time:''
+        end_time: '',
+        start_time: '',
+        created_by: ''
     });
 
     const handleClickOpen = () => {
-        console.log(id)
-        console.log(todoID)
-        axios.get('http://localhost:3000/todo/' + todoID)
-            .then(res => {
-                console.log(res.data)
-                values = {...res.data}
-                updateInputs(values)
-            })
-            .then(() => {
-                setOpen(true);
-            })
-            .catch((error) => {
-                console.log(error)
-            });
+        resetInputs();
+        if (!newTodo) {
+            axios.get('http://localhost:3000/todo/' + todoID)
+                .then(res => {
+                    console.log(res.data);
+                    values = {...res.data};
+                    updateInputs(values)
+                })
+                .catch((error) => {
+                    console.log(error)
+                });
+        }
+        setOpen(true);
     };
 
     const handleClose = () => {
@@ -68,25 +69,34 @@ export default function FormDialog(id) {
     };
 
     const handleCloseWithSave = () => {
-        const data = ({name: inputs.name, description: inputs.description, end_time:inputs.end_time});
-        axios.patch('http://localhost:3000/todo/' + todoID, JSON.stringify(data))
-            .then(res => console.log(res.data));
+        const data = ({name: inputs.name, description: inputs.description, end_time: inputs.end_time});
+        if (!newTodo) {
+            axios.patch('http://localhost:3000/todo/' + todoID, JSON.stringify(data))
+                .then(res => console.log(res.data));
+        } else {
+            axios.post('http://localhost:3000/todo/', JSON.stringify(data))
+                .then(res => console.log(res.data));
+        }
         setOpen(false);
+        window.location.reload()
     };
 
     return (
         <div>
-            <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                Edit
-            </Button>
+
+                <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+                    {newTodo ? 'Add new todo' : 'Edit'}
+                </Button>
+
+
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Edit todo</DialogTitle>
+                <DialogTitle id="form-dialog-title">{newTodo ? 'Add new todo' : 'Edit todo'}</DialogTitle>
 
                 <DialogContent>
                     <DialogContentText>
                         Todo contents:
                     </DialogContentText>
-                    <form className={classes.container} noValidate autoComplete="off">
+                    <form className={classes.container}>
                         <TextField
                             autoFocus
                             required
@@ -141,12 +151,15 @@ export default function FormDialog(id) {
                 </DialogContent>
 
                 <DialogActions>
+
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
+
                     <Button onClick={handleCloseWithSave} color="primary">
                         Save
                     </Button>
+
                 </DialogActions>
 
             </Dialog>

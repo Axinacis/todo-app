@@ -8,7 +8,8 @@ todoRouter.post('/todo/', auth, async (req, res) => {
         const todo = new Todo({
             name: req.body.name,
             description: req.body.description,
-            created_by: req.user.name
+            created_by: req.user.name,
+            end_time: req.body.end_time
         });
         await todo.save();
         res.status(201).send({todo})
