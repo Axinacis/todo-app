@@ -35,7 +35,6 @@ function List() {
                     <h3 className="panel-title">
                         List of to-do items &nbsp; <br/>
                         <button className="btn btn-primary" onClick={refreshTodos}>Refresh todos</button>
-                        }
                     </h3>
                 </div>
                 <div class="panel-body">

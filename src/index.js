@@ -15,18 +15,23 @@ function App() {
 
     return (
         <div className='App'>
-            <A href='/'> Home </A><br/>
-            <A href='/test'> Testi </A><br/>
-            <A href='/login'> Login </A><br/>
-            <A href='/register'> Register </A><br/>
-            <A href='/list'> List of todos </A><br/>
-            {routeResult}
+            <div className='sidenav'>
+                <A href='/'> Home </A><br/>
+                <A href='/login'> Login </A><br/>
+                <A href='/register'> Register </A><br/>
+                <A href='/list'> List of todos </A><br/>
 
-            {localStorage.getItem('jwtToken') &&
-            <button className="btn btn-primary" onClick={logout}>Logout</button>}
+
+                {localStorage.getItem('jwtToken') &&
+                <button className="btn btn-primary" onClick={logout}>Logout</button>}
+            </div>
+
+            <div className='main'>
+            {routeResult}
+            </div>
 
         </div>
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

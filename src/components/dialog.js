@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -34,7 +34,11 @@ export default function FormDialog(id) {
     const todoID = id.id;
     const classes = useStyles();
 
-    const {inputs, handleInputChange} = useForm({
+    useEffect(()=> {
+
+            },[values]);
+
+    const {inputs, handleInputChange, updateInputs} = useForm({
         name:'',
         description:'',
         created_by:''
@@ -47,8 +51,14 @@ export default function FormDialog(id) {
             .then(res => {
                 console.log(res.data)
                 values = {...res.data}
-            });
-        setOpen(true);
+                updateInputs(values)
+            })
+            .then(()=>{
+                setOpen(true);
+            })
+            .catch((error) => {
+            console.log(error)
+        });
     };
 
     const handleClose = () => {
@@ -71,7 +81,7 @@ export default function FormDialog(id) {
                         <TextField
                             autoFocus
                             margin="dense"
-                            id="Uncontrolled"
+                            id="standard-full-width textname"
                             label="Todo name"
                             type="text"
                             value={inputs.name}
@@ -80,7 +90,7 @@ export default function FormDialog(id) {
                         />
                         <TextField
                             margin="dense"
-                            id="standard-multiline-flexible"
+                            id="standard-multiline-flexible textdesc"
                             label="Description"
                             rowsMax="4"
                             type="text"
@@ -90,7 +100,7 @@ export default function FormDialog(id) {
                         />
                         <TextField
                             margin="dense"
-                            id="standard-read-only-input"
+                            id="standard-read-only-input textcreated"
                             label="Created by"
                             type="text"
                             value={inputs.created_by}
@@ -104,7 +114,7 @@ export default function FormDialog(id) {
                         Cancel
                     </Button>
                     <Button onClick={handleClose} color="primary">
-                        Subscribe
+                        Save
                     </Button>
                 </DialogActions>
 

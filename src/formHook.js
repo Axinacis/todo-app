@@ -15,10 +15,15 @@ const useForm =  (initialValues) => {
         setInputs(inputs => ({...inputs, [event.target.name]:event.target.value}))
     };
 
+    const updateInputs = (values) => {
+        setInputs({...values})
+    };
+
     return {
         inputs,
         // handleSubmit,
-        handleInputChange
+        handleInputChange,
+        updateInputs
     }
 };
 
