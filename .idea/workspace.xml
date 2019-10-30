@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b76222d8-4ca3-47db-be5a-aca78193f5ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_server/routes/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_server/routes/todo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/formHook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/formHook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +96,7 @@
       <workItem from="1571979099459" duration="1424000" />
       <workItem from="1571983278993" duration="16318000" />
       <workItem from="1572250237893" duration="19400000" />
-      <workItem from="1572432710193" duration="2618000" />
+      <workItem from="1572432710193" duration="7462000" />
     </task>
     <task id="LOCAL−00001" summary="setting up">
       <created>1571816943597</created>
@@ -127,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572269062478</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="list viewing working">
+      <created>1572435393735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572435393735</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +157,7 @@
     <MESSAGE value="basic home, login and register working with hooks" />
     <MESSAGE value="todo db handling building" />
     <MESSAGE value="wip, getting listing to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip, getting listing to work" />
+    <MESSAGE value="list viewing working" />
+    <option name="LAST_COMMIT_MESSAGE" value="list viewing working" />
   </component>
 </project>

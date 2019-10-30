@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import useForm from "../formHook";
 import axios from "axios";
 
@@ -30,18 +30,20 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormDialog(id) {
     const [open, setOpen] = React.useState(false);
-    let values = {name:'',description:'',created_by:''};
+    let values = {};
     const todoID = id.id;
     const classes = useStyles();
 
-    useEffect(()=> {
+/*
+    useEffect(() => {
 
-            },[values]);
+    },[values]);
+*/
 
     const {inputs, handleInputChange, updateInputs} = useForm({
-        name:'',
-        description:'',
-        created_by:''
+        name: '',
+        description: '',
+        end_time:''
     });
 
     const handleClickOpen = () => {
@@ -53,15 +55,22 @@ export default function FormDialog(id) {
                 values = {...res.data}
                 updateInputs(values)
             })
-            .then(()=>{
+            .then(() => {
                 setOpen(true);
             })
             .catch((error) => {
-            console.log(error)
-        });
+                console.log(error)
+            });
     };
 
     const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleCloseWithSave = () => {
+        const data = ({name: inputs.name, description: inputs.description, end_time:inputs.end_time});
+        axios.patch('http://localhost:3000/todo/' + todoID, JSON.stringify(data))
+            .then(res => console.log(res.data));
         setOpen(false);
     };
 
@@ -80,8 +89,9 @@ export default function FormDialog(id) {
                     <form className={classes.container} noValidate autoComplete="off">
                         <TextField
                             autoFocus
+                            required
                             margin="dense"
-                            id="standard-full-width textname"
+                            id="standard-full-width"
                             label="Todo name"
                             type="text"
                             value={inputs.name}
@@ -89,8 +99,9 @@ export default function FormDialog(id) {
                             fullWidth
                         />
                         <TextField
+                            required
                             margin="dense"
-                            id="standard-multiline-flexible textdesc"
+                            id="standard-multiline-flexible"
                             label="Description"
                             rowsMax="4"
                             type="text"
@@ -99,11 +110,31 @@ export default function FormDialog(id) {
                             fullWidth
                         />
                         <TextField
+                            disabled
                             margin="dense"
-                            id="standard-read-only-input textcreated"
+                            id="standard-disabled"
                             label="Created by"
                             type="text"
                             value={inputs.created_by}
+                            fullWidth
+                        />
+                        <TextField
+                            disabled
+                            margin="dense"
+                            id="standard-disabled"
+                            label="Start time"
+                            type="text"
+                            value={inputs.start_time}
+                            fullWidth
+                        />
+                        <TextField
+                            required
+                            margin="dense"
+                            id="standard-full-width"
+                            label="End time"
+                            type="text"
+                            onChange={handleInputChange}
+                            value={inputs.end_time}
                             fullWidth
                         />
                     </form>
@@ -113,7 +144,7 @@ export default function FormDialog(id) {
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={handleClose} color="primary">
+                    <Button onClick={handleCloseWithSave} color="primary">
                         Save
                     </Button>
                 </DialogActions>

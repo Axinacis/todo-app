@@ -43,7 +43,7 @@ todoRouter.get('/todo/:id', auth, async (req, res) => {
 
 todoRouter.patch('/todo/:id', auth, async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ['name', 'email', 'end_time'];
+    const allowedUpdates = ['name', 'description', 'end_time'];
     const isValid = updates.every((update) => allowedUpdates.includes(update));
     if (!isValid) {
         return res.status(400).send({error: 'Invalid updates!'})
