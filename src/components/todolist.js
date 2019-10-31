@@ -14,7 +14,10 @@ const TodoList = ({ todos, showTodo }) => (
             <ListItem key={index.toString()} dense button>
                 <Checkbox tabIndex={-1} disableRipple />
                 <ListItemText primary={todo.name} />
-                <FormDialog buttonText='Edit' id={todo._id}/>
+                {/*<FormDialog buttonText='Edit' id={todo._id}/>*/}
+                {console.log(todo)}
+                {FormDialog(false, todo._id)}
+
 
                 {/*<ListItemSecondaryAction>
                     <IconButton

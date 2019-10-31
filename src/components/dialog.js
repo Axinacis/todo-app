@@ -31,14 +31,12 @@ const useStyles = makeStyles(theme => ({
 export default function FormDialog(newTodo = false, id) {
     const [open, setOpen] = React.useState(false);
     let values = {};
-    const todoID = id.id;
+    // const todoID = id.id;
     const classes = useStyles();
 
-    /*
         useEffect(() => {
 
         },[values]);
-    */
 
     let {inputs, handleInputChange, updateInputs, resetInputs} = useForm({
         name: '',
@@ -51,11 +49,10 @@ export default function FormDialog(newTodo = false, id) {
     const handleClickOpen = () => {
         resetInputs();
         if (!newTodo) {
-            axios.get('http://localhost:3000/todo/' + todoID)
+            axios.get('http://localhost:3000/todo/' + id)
                 .then(res => {
                     console.log(res.data);
                     values = {...res.data};
-                    updateInputs(values)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -71,7 +68,7 @@ export default function FormDialog(newTodo = false, id) {
     const handleCloseWithSave = () => {
         const data = ({name: inputs.name, description: inputs.description, end_time: inputs.end_time});
         if (!newTodo) {
-            axios.patch('http://localhost:3000/todo/' + todoID, JSON.stringify(data))
+            axios.patch('http://localhost:3000/todo/' + id, JSON.stringify(data))
                 .then(res => console.log(res.data));
         } else {
             axios.post('http://localhost:3000/todo/', JSON.stringify(data))
@@ -105,6 +102,7 @@ export default function FormDialog(newTodo = false, id) {
                             label="Todo name"
                             type="text"
                             value={inputs.name}
+                            defaultValue={values.name}
                             onChange={handleInputChange}
                             fullWidth
                         />

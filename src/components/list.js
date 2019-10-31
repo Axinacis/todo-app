@@ -8,15 +8,16 @@ function List() {
 
     const [todos, setTodos] = useState([]);
 
-    useEffect(() => {
-        refreshTodos()
-    },[todos]);
+    // useEffect(() => {
+    //     refreshTodos()
+    // },[todos]);
 
     const refreshTodos = () => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.get('http://localhost:3000/todo')
-            .then(res => {
+            .then((res) => {
                 setTodos(res.data);
+                console.log(todos)
             })
             .catch((error) => {
                 console.log(error.response)
@@ -35,7 +36,8 @@ function List() {
                     <h3 className="panel-title">
                         List of to-do items &nbsp; <br/>
                         <button className="btn btn-primary" onClick={refreshTodos}>Refresh todos</button>
-                        <FormDialog buttonText='Add new todo'/>
+                        {/*<FormDialog buttonText='Add new todo'/>*/}
+                        {FormDialog(true, '0')}
                     </h3>
                 </div>
                 <div class="panel-body">
